@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "7dc358e284c5ee72",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c2aec4a75f12fee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2daf92f87a2bd606",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "第8周/第八周 语料库构建应用之课程复习.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8bbc074e2e83a866",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d194102be9aac0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "53f600e1762fcaba",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e843abdc3732fa69",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6e83a8e1ba89162e",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "49edae49a9e8126b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "094b3350beff2efb",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d9b1b17aa893796",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1b7b51c93c3aa23",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "第8周/第八周 语料库构建应用之课程复习.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0adf3e6a8f1232ab",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "第8周/第八周 语料库构建应用之课程复习.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1aa953c59e1080c4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "f28a134a9e4e0f5c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "第8周/第八周 语料库构建应用之课程复习.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "53f600e1762fcaba",
+  "lastOpenFiles": [
+    "第8周/第八周 电脑性能需求记录.md",
+    "第11周/软件工程之状态机图作业.md",
+    "第12周/latex相关.md",
+    "第4周/第四周 python训练.md",
+    "第7周/第七周 手机软件开发需求文档编写.md",
+    "第7周/第七周 专业软件开发需求文档模板.md",
+    "第8周/第八周 语料库构建应用之课程复习.md",
+    "第9周/第九周 数据库小测.md",
+    "第九周.md",
+    "第9周/第九周 数据库实验记录.md",
+    "第9周/第九周 兼职语料.md",
+    "第9周/第九周 六级翻译.md",
+    "第9周/第九周 个人管理之状态恢复.md",
+    "第10周/第十周 数据结构之解题记录.md",
+    "第10周/第十周 信息检索第四讲作业答案.md",
+    "第10周/第十周 信息检索第六讲作业答案.md",
+    "第10周/第十周 信息检索第五讲作业答案.md",
+    "第10周/第十周 信息检索第二讲作业答案.md",
+    "第10周/第十周 信息检索第三讲作业答案.md",
+    "第10周/第十周 信息检索第七讲作业答案.md",
+    "第10周/第十周 信息检索之作业记录.md",
+    "第10周/20191103371 秦颖欣.md",
+    "第12周/任务梳理.md",
+    "第12周/latex相关.assets/image-20230512162435839.png",
+    "第12周/latex相关.assets/image-20230512162431078.png",
+    "第12周/latex相关.assets/image-20230512162423471.png",
+    "第6周/test.md",
+    "第0周/开学任务清单.md",
+    "第3周/第三周数据库.md",
+    "第2周/数据库设计模型实例总结.assets/image-20230228102547828.png"
+  ]
+}
