@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秦颖欣 - 产品经理简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+        }
+
+        /* 头部信息 */
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .header .info {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header .info span {
+            white-space: nowrap;
+        }
+
+        .job-intention {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* 区块标题 */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* 个人优势 */
+        .advantages-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .advantages-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .advantages-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+
+        .advantages-list strong {
+            color: #333;
+        }
+
+        /* 专业技能 */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .skills-list .skill-label {
+            font-weight: bold;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+        /* 实习样式 */
+        .compact-project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .project-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: #fafafa;
+        }
+
+        .project-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .project-box p {
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+
+        .project-box .label {
+            font-weight: bold;
+            color: #555;
+        }
+        /* 经历条目 */
+        .experience-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .experience-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .experience-company {
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .experience-date {
+            color: #999;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .experience-content {
+            margin-top: 10px;
+        }
+
+        .experience-content h4 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            color: #555;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+
+        /* 项目经历 */
+        .project-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .project-type {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 教育经历 */
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        /* 其他部分 */
+        .other-section {
+            margin-bottom: 15px;
+        }
+
+        .other-section h4 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .other-section p {
+            color: #666;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .header .info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .experience-header,
+            .project-header,
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .experience-date,
+            .project-type {
+                margin-top: 5px;
+            }
+        }
+
+        /* 可编辑样式变量 */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --border-color: #ddd;
+            --bg-color: #f9f9f9;
+            --font-size-base: 14px;
+            --font-size-title: 18px;
+            --font-size-name: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部信息 -->
+        <header class="header">
+            <h1>秦颖欣</h1>
+            <div class="info">
+                <span>女 | 年龄：23岁</span>
+                <span>📱 18803731374</span>
+                <span>✉️ 2609260594@qq.com</span>
+            </div>
+            <div class="job-intention">
+                <strong>求职意向：</strong>产品经理 | <strong>期望薪资：</strong>10-12K | <strong>期望城市：</strong>深圳
+            </div>
+            
+        </header>
+
+        <!-- 个人优势 -->
+        <section class="section">
+            <h2 class="section-title">个人优势</h2>
+            <ul class="advantages-list">
+                <li><strong>产品岗位认同：</strong>通过实习协作，认同产品经理的跨部门协调定位</li>
+                <li><strong>问题分解能力：</strong>可识别基础模式、拆解构成并跨场景复用</li>
+                <li><strong>工具学习能力：</strong>可理解功能设计意图，匹配工具与需求场景</li>
+                <li><strong>团队协作经验：</strong>两次跨专业合作参赛；两段实习期间与产品、开发、测试多方协作完成需求交付</li>
+                <li><strong>情绪管理方式：</strong>可识别情绪波动，借助外部资源调节状态</li>
+            </ul>
+        </section>
+
+        <!-- 专业技能 -->
+        <section class="section">
+            <h2 class="section-title">专业技能</h2>
+            <ul class="skills-list">
+                <li>
+                    <span class="skill-label">需求分析设计：</span>
+                    <span>可较熟练使用Xmind、Axure、Cursor等完成功能点梳理以及原型分析绘制</span>
+                </li>
+                <li>
+                    <span class="skill-label">数据分析：</span>
+                    <span>可较熟练使用Tableau进行数据驱动的需求分析和决策支持</span>
+                </li>
+                <li>
+                    <span class="skill-label">前端开发：</span>
+                    <span>可较熟练使用HTML5、CSS3、Javascript、Vue等完成基础B端产品功能开发需求</span>
+                </li>
+                <li>
+                    <span class="skill-label">后端开发：</span>
+                    <span>可使用Java、SpringBoot、MybatisPlus、Python、MySQL完成demo级项目开发需求</span>
+                </li>
+                <li>
+                    <span class="skill-label">版本管理：</span>
+                    <span>可较熟练使用Git完成基础开发协作流程</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 实习经历 -->
+        <section class="section">
+            <h2 class="section-title">实习经历</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">前端开发工程师</span>
+                        <span class="experience-company">广州软件应用技术研究院</span>
+                    </div>
+                    <span class="experience-date">2024.07-2025.01</span>
+                </div>
+                <div class="compact-project">
+                    <div class="project-box">
+                        <h4>西藏化妆品监测与风险管控平台</h4>
+                        <p><span class="label">负责：</span>监管端统计页面、不良事件数据填报、数据质量评估模块</p>
+                        <p><span class="label">实现：</span>区划数据三级下钻、大表单前后端数据同步</p>
+                        <p><span class="label">技术：</span>Vue.js 2.x、Element UI、ECharts</p>
+                    </div>
+                    
+                    <div class="project-box">
+                        <h4>藏药资源库平台开发</h4>
+                        <p><span class="label">负责：</span>药企动态管理、方剂信息展示模块</p>
+                        <p><span class="label">实现：</span>跨模块数据联动、知识图谱渲染、藏文双语支持</p>
+                        <p><span class="label">技术：</span>Vue.js 2.x、G6、ECharts</p>
+                    </div>
+                    
+                    <div class="project-box">
+                        <h4>化妆品生产企业质量安全风险监管核查评估管理</h4>
+                        <p><span class="label">负责：</span>协同任务模块、问卷填写、题库、模板功能维护</p>
+                        <p><span class="label">实现：</span>旧代码重构、遗留问题修复</p>
+                        <p><span class="label">技术：</span>jQuery、Layui、Diaowen</p>
+                    </div>
+                    
+                    <div class="project-box">
+                        <h4>政务业务系统低代码平台迁移</h4>
+                        <p><span class="label">负责：</span>基础组件配置</p>
+                        <p><span class="label">实现：</span>列表、表单、详情页JSON配置</p>
+                        <p><span class="label">技术：</span>amis、Cursor辅助</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 10px; background: #f0f0f0;">
+                    <strong>实习成果：</strong>
+                    技术掌握：独立使用Vue及相关工具库完成模块开发 | 
+                    开发流程：掌握Git版本控制、前后端联调、代码调试 | 
+                    工作产出：新功能页面独立开发10+，Bug修复50+，绩效80+
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">软件测试</span>
+                        <span class="experience-company">广州快决测信息科技有限公司</span>
+                    </div>
+                    <span class="experience-date">2023.07-2023.09</span>
+                </div>
+                <div class="experience-content">
+                    <h4>ezTest 智能在线问卷系统</h4>
+                    <ul class="experience-list">
+                        <li>测试范围：一键绘制热区、系统语言适配、多类型表单、多层题组、选项分组、文案批量替换、问卷答题逻辑</li>
+                        <li>需求评审：与开发沟通需求，输出理解文档辅助验收</li>
+                        <li>测试文档：基于需求和UI文档编写测试用例</li>
+                        <li>问题跟踪：定位问题，与开发沟通解决方案和预期效果</li>
+                        <li>数据准备：在测试、灰度、生产环境设计数据，支持复现和回归</li>
+                        <li>功能验收：跟进验收，与产品确认功能符合需求</li>
+                    </ul>
+                    <h4>实习成果：</h4>
+                    <ul class="experience-list">
+                        <li>工作产出：Bug提单30+，有效率90%（拒绝率10%）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目经历 -->
+        <section class="section">
+            <h2 class="section-title">项目经历</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">仿豆瓣电影交流平台</span>
+                    <span class="project-type">毕业设计 2025.02-2025.04</span>
+                </div>
+                <p><strong>产品定位：</strong>面向电影爱好者的垂直社交平台</p>
+                <h4>核心功能设计：</h4>
+                <ul class="experience-list">
+                    <li>用户端：电影检索、在线观看、观影记录、多层评论、个人片单、个性化推荐</li>
+                    <li>管理端：电影数据管理、用户管理、评论审核、推荐数据监控</li>
+                </ul>
+                <h4>项目流程：</h4>
+                <ul class="experience-list">
+                    <li>需求分析：定义目标用户、梳理功能优先级</li>
+                    <li>产品设计：绘制原型图、撰写需求文档</li>
+                    <li>技术选型及实现：确定常用低成本项目脚手架、前后端开发、数据库设计</li>
+                    <li>项目管理：三个月独立完成全流程</li>
+                </ul>
+                <p><strong>技术栈：</strong>Claude辅助、Xmind，Axure原型设计、Vue 3等前端开发、SpringBoot3等后端开发、Git管理</p>
+                <h4>业绩：</h4>
+                <ul class="experience-list">
+                    <li>完成度：实现90%功能需求</li>
+                    <li>文档输出：需求文档、设计文档、技术文档</li>
+                    <li>成绩评定：85分（达预期目标）</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">桌面立式倒抽纸巾盒</span>
+                    <span class="project-type">产品设计 2024.11-2025.01</span>
+                </div>
+                <p><strong>问题识别：</strong>纸巾使用末期抽取困难，效率降低80%</p>
+                <p><strong>解决方案：</strong>借鉴壁挂式设计原理，实现全周期无阻力抽取</p>
+                <h4>执行步骤：</h4>
+                <ul class="experience-list">
+                    <li>需求定义：识别问题以及问题解决成本快速完成功能分析和结构草图</li>
+                    <li>快速原型：GPT辅助生成概念设计，3小时内完成初版</li>
+                    <li>用户验证：小红书发帖获取即时反馈并持续推进交流互动，进一步明确需求意义</li>
+                    <li>技术迭代：小红书社区协作优化为可3D打印模型</li>
+                    <li>成果转化：授权设计专业同学作为课程项目参考</li>
+                </ul>
+                <h4>投入成本：</h4>
+                <ul class="experience-list">
+                    <li>材料：成本很低可忽略不计</li>
+                    <li>工具：GPT、小红书互动社区、MakerWorld开源社区</li>
+                    <li>时间：碎片化沟通时间累计约10小时</li>
+                </ul>
+                <h4>核心产出：</h4>
+                <ul class="experience-list">
+                    <li>可打印3D模型文件</li>
+                    <li>完整流程文档（小红书互动式博客形式）</li>
+                    <li>博客浏览量9万+，点赞收藏1千+</li>
+                    <li>扩展设计方案3+个</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">AI 文书助手</span>
+                    <span class="project-type">课程项目 2024.03-2024.04</span>
+                </div>
+                <p><strong>需求背景：</strong>办公室文书工作人工撰写平均耗时1小时/份、容易产生倦怠情绪</p>
+                <h4>技术架构：</h4>
+                <ul class="experience-list">
+                    <li>后端框架：Flask + Spark LLM API</li>
+                    <li>前端技术：原生JavaScript + marked.js</li>
+                    <li>核心组件：Flask-Login认证 + Flask-CORS跨域 + Flask-jsonify数据交互</li>
+                </ul>
+                <h4>关键实现：</h4>
+                <ul class="experience-list">
+                    <li>性能优化：异步处理(Async/Await)降低响应时间60%</li>
+                    <li>用户体验：SessionStorage本地缓存减少50%重复请求</li>
+                    <li>交互优化：Markdown渲染输出，所见即所得</li>
+                </ul>
+                <p><strong>技术栈：</strong>Python 3.8、Flask、JavaScript ES6、Spark LLM API</p>
+                <h4>量化成果：</h4>
+                <ul class="experience-list">
+                    <li>文档生成效率提升100%（1小时→30分钟）</li>
+                    <li>支持5类文书模板（报告/纪要/邮件/通知/总结）</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 教育经历 -->
+        <section class="section">
+            <h2 class="section-title">教育经历</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <strong>广东外语外贸大学</strong> 本科 计算机科学与技术
+                    </div>
+                    <span>2021-2025</span>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <strong>广东外语外贸大学</strong> 本科 应用心理学
+                    </div>
+                    <span>2019-2021</span>
+                </div>
+                <p style="color: #666; font-size: 13px; margin-top: 5px;">修完核心课程后达到转专业标准转至计算机科学与技术专业</p>
+            </div>
+        </section>
+
+        <!-- 资格证书 -->
+        <section class="section">
+            <h2 class="section-title">资格证书</h2>
+            <p>六级530 四级579 广东省"攀登计划"立项 挑战杯院级二等奖</p>
+        </section>
+
+        <!-- 志愿者经历 -->
+        <section class="section">
+            <h2 class="section-title">志愿者经历</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <strong>广交会参展商翻译志愿者</strong> 60小时
+                    </div>
+                    <span>2022.05-2023.05</span>
+                </div>
+                <p>131届、133届广交会参展商翻译：熟悉参展商业务、商务沟通话术，为参展商提供信息传达服务。</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
