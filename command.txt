@@ -1,0 +1,1 @@
+pandoc leetcode/NOTE.MD -o leetcode/NOTE.html --standalone
