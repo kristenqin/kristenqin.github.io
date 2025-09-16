@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       mark-web-converter:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
 
 packages:
 
-  mark-web-converter@1.0.0:
-    resolution: {integrity: sha512-wDqFDvnKOCDSVWYqv6wMU8sUA11z9L+WSNZVALaDRfmfy+iCCnIjHeVhU1BZrJtJaBfO8Vo7avGKjLmPOFnSJQ==}
+  mark-web-converter@1.0.1:
+    resolution: {integrity: sha512-xBlwcVL3Pe5MtHvMCrgDL3V9hjj8bV+MMrHyUmKkVSlvb3MZxvu7TOVJhNiXKFTbtzwcCLisjTZiPSSThLb/4Q==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -26,7 +26,7 @@ packages:
 
 snapshots:
 
-  mark-web-converter@1.0.0:
+  mark-web-converter@1.0.1:
     dependencies:
       marked: 4.3.0
 
