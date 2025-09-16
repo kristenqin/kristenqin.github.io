@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mark-web-converter": "^1.0.0"
+  },
+  "scripts": {
+    "convert": "npx mark-web-converter -i ./leetcode -o ./leetcode/dist"
+  }
+}

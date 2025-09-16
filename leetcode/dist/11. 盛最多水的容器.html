@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. 盛最多水的容器</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 { border-bottom: 1px solid #eaecef; padding-bottom: 10px; }
+        code {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            font-size: 85%;
+            margin: 0;
+            padding: 0.2em 0.4em;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            font-size: 85%;
+            line-height: 1.45;
+            overflow: auto;
+            padding: 16px;
+        }
+        pre code {
+            background-color: transparent;
+            border: 0;
+            display: inline;
+            line-height: inherit;
+            margin: 0;
+            max-width: auto;
+            overflow: visible;
+            padding: 0;
+            word-wrap: normal;
+        }
+        blockquote {
+            border-left: 0.25em solid #dfe2e5;
+            color: #6a737d;
+            margin: 0;
+            padding: 0 1em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 11. 盛最多水的容器 -->
+<!-- 感觉两种解决思路的差别是 第一种只是在考虑找两个位置对应的垂线，关注点放在了找垂线上 第二种思考 因为面积本身就是宽度和高度之间的结果 第二种关注点放在了对宽度和高度的直接权衡上了 感觉更抽象 更节省变量 逻辑更简单了 -->
+
+<h3 id="暴力解法-双层循环"><strong>暴力解法 (双层循环)</strong></h3>
+<ul>
+<li><p><strong>关注点</strong>：</p>
+<ul>
+<li>从所有可能的「两根垂线」里挑一对</li>
+<li>每次都要算一次面积 → 比较更新最大值</li>
+</ul>
+</li>
+<li><p><strong>思维方式</strong>：</p>
+<ul>
+<li>「枚举所有可能性」</li>
+<li>侧重点在 <strong>找线</strong>，不管哪些有潜力，直接全试</li>
+</ul>
+</li>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>时间复杂度高 <strong>O(n²)</strong></li>
+<li>思路直接，贴合题意（“找两根线”）</li>
+<li>逻辑比较机械，变量和循环都比较多</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="双指针解法"><strong>双指针解法</strong></h3>
+<ul>
+<li><p><strong>关注点</strong>：</p>
+<ul>
+<li>面积公式 = 宽度 × 高度</li>
+<li>宽度是可控的（每次缩小一格），高度取决于两边的较小值</li>
+<li>思路变成：<strong>宽度减小时，如何尽可能提高高度？</strong></li>
+</ul>
+</li>
+<li><p><strong>思维方式</strong>：</p>
+<ul>
+<li>「权衡宽度与高度」</li>
+<li>通过移动指针（丢掉限制高度的小的一边），尝试寻找更优解</li>
+</ul>
+</li>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>时间复杂度低 <strong>O(n)</strong></li>
+<li>更抽象，抓住面积的本质（宽 × 高）</li>
+<li>逻辑更简洁，变量更少，效率更高</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="总结">总结</h3>
+<p>你说的那句非常准确：</p>
+<ul>
+<li><strong>暴力解法</strong> 是从「外部形式」（线）出发。</li>
+<li><strong>双指针解法</strong> 是从「内部本质」（面积构成因素）出发。</li>
+</ul>
+<hr>
+
+</body>
+</html>

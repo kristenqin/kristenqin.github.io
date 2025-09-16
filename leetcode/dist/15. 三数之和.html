@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. 三数之和</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 { border-bottom: 1px solid #eaecef; padding-bottom: 10px; }
+        code {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            font-size: 85%;
+            margin: 0;
+            padding: 0.2em 0.4em;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            font-size: 85%;
+            line-height: 1.45;
+            overflow: auto;
+            padding: 16px;
+        }
+        pre code {
+            background-color: transparent;
+            border: 0;
+            display: inline;
+            line-height: inherit;
+            margin: 0;
+            max-width: auto;
+            overflow: visible;
+            padding: 0;
+            word-wrap: normal;
+        }
+        blockquote {
+            border-left: 0.25em solid #dfe2e5;
+            color: #6a737d;
+            margin: 0;
+            padding: 0 1em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 15. 三数之和-->
+<!-- 排序 循环 双指针的思路本质上是在如何思考这个问题的 我知道我的暴力解法是直接盯着目标结果组成的元素来求解的，拿到这些元素之后再组合成我想要的三元组数组序列 但是这种优化思路给我的感觉是直接找三元组不好找 那就三元组中拆出来一个元素找二元组 和循环的对象凑成三元组 -->
+
+<hr>
+<h2 id="1-暴力解法的思路">1. 暴力解法的思路</h2>
+<ul>
+<li><p><strong>关注点</strong>：目标三元组</p>
+</li>
+<li><p><strong>做法</strong>：
+直接从数组中“盯着”三个数 <code>i, j, k</code>，枚举所有组合，看是否满足 <code>nums[i] + nums[j] + nums[k] == 0</code>。</p>
+</li>
+<li><p><strong>本质</strong>：把问题当作「结果导向」：我就是要三元组 → 我就全试一遍。</p>
+</li>
+<li><p><strong>优缺点</strong>：</p>
+<ul>
+<li>思路直观</li>
+<li>时间复杂度高 (<strong>O(n³)</strong>)，很多无效枚举</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-排序--双指针的思路">2. 排序 + 双指针的思路</h2>
+<ul>
+<li><p><strong>关注点</strong>：如何高效地找到和为 0 的组合</p>
+</li>
+<li><p><strong>核心转化</strong>：</p>
+<ul>
+<li>三元组不好直接找</li>
+<li>但是如果我先确定一个数 <code>nums[i]</code>，问题就转化为：
+<strong>“在剩下的数里找一对二元组，使它们的和等于 <code>-nums[i]</code>”</strong></li>
+<li>这样三元组就被拆成了「一个固定值 + 一个二元组」。</li>
+</ul>
+</li>
+<li><p><strong>为什么要排序？</strong></p>
+<ul>
+<li><p>排序后，二元组的查找就能用 <strong>双指针</strong>：</p>
+<ul>
+<li>如果和太小，左指针右移；</li>
+<li>如果和太大，右指针左移；</li>
+<li>如果刚好等于目标，就收集。</li>
+</ul>
+</li>
+<li><p>这样避免了无意义的枚举。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>本质</strong>：</p>
+<ul>
+<li>从「三元组的空间」降维到「二元组的空间」。</li>
+<li>再用排序+双指针控制二元组搜索的效率。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-思维方式的差别">3. 思维方式的差别</h2>
+<ul>
+<li><p><strong>暴力解法</strong>：</p>
+<blockquote>
+<p>我要三元组 → 我就挨个枚举三元组，看哪些符合条件。</p>
+</blockquote>
+</li>
+<li><p><strong>优化解法</strong>：</p>
+<blockquote>
+<p>三元组直接找太难 → 我先挑一个数 → 剩下的二元组更容易找。
+二元组再用排序+双指针，高效逼近目标。</p>
+</blockquote>
+</li>
+</ul>
+<p>换句话说：</p>
+<ul>
+<li>暴力解法是 <strong>结果导向</strong>，「三元组 → 穷举」。</li>
+<li>排序+双指针是 <strong>过程导向</strong>，「三元组 → 固定一个数 + 找二元组 → 双指针高效找到」。</li>
+</ul>
+<!-- 排序是一个降维的动作 多变量减少变量也是一个降维的动作 但是感觉两种降维的方式不太一样 -->
+
+<p>你说得特别对 👍
+“排序”确实是一种降维，“固定一个元素再找二元组”也是一种降维，但这两种降维的 <strong>性质</strong> 不太一样。我们可以拆开看：</p>
+<hr>
+<h2 id="1-排序的降维性质">1. 排序的“降维”性质</h2>
+<ul>
+<li><strong>作用</strong>：
+把原本 <strong>无序的多维搜索空间</strong>（三元组 → 本质是三维组合空间）
+转换成一个 <strong>有序的一维数轴</strong>。</li>
+<li><strong>直观效果</strong>：
+原本 <code>[ -4, -1, -1, 0, 1, 2 ]</code> 没有顺序，你无法用规律性去排除不可能的组合；
+一旦排好序，就能利用「单调性」来缩小搜索范围。</li>
+<li><strong>本质</strong>：
+排序是一种 <strong>“结构化”降维</strong>，它给原本无结构的空间引入了线性顺序，方便你用指针来扫描。</li>
+</ul>
+<hr>
+<h2 id="2-固定一个元素的降维性质">2. 固定一个元素的“降维”性质</h2>
+<ul>
+<li><strong>作用</strong>：
+原问题是 <code>i, j, k</code> 三个下标的组合 → 三维搜索。
+固定 <code>i</code> 之后，就只剩下 **二维搜索 (j, k)**。</li>
+<li><strong>直观效果</strong>：
+原本要考虑所有 <code>O(n³)</code> 组合，现在只要考虑 <code>O(n²)</code>。</li>
+<li><strong>本质</strong>：
+固定变量是一种 <strong>“维度约束”降维</strong>，它通过条件约束减少了自由度。</li>
+</ul>
+<hr>
+<h2 id="3-两者的区别">3. 两者的区别</h2>
+<ul>
+<li><p><strong>排序降维</strong>：</p>
+<ul>
+<li>从“无序 → 有序”，属于 <strong>增加结构信息</strong> 的降维。</li>
+<li>它不减少自由度，但让搜索路径有规律可循。</li>
+</ul>
+</li>
+<li><p><strong>固定变量降维</strong>：</p>
+<ul>
+<li>从“三维搜索空间 → 二维搜索空间”，属于 <strong>减少自由度</strong> 的降维。</li>
+<li>它直接把问题规模压缩了一个维度。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-组合在一起">4. 组合在一起</h2>
+<p>三数之和的优化思路，其实是两步降维：</p>
+<ol>
+<li><strong>固定一个数</strong>（维度约束降维 → 三维 → 二维）。</li>
+<li><strong>排序后用双指针</strong>（结构化降维 → 二维搜索变成单调性扫描）。</li>
+</ol>
+<p>这样三维问题被逐层压缩，最后变成「在一维数组上移动两个指针」的问题。</p>
+<hr>
+<p>🔎 所以可以总结：</p>
+<ul>
+<li><strong>排序</strong> → 给无序空间增加“结构”，让你能利用单调性高效搜索。</li>
+<li><strong>固定变量</strong> → 给问题加约束，减少自由度，从高维搜索转化为低维搜索。</li>
+</ul>
+<hr>
+
+</body>
+</html>
