@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         /* 打印样式 */
         @media print {
             @page {
@@ -18,51 +20,60 @@
                 margin-left: 10mm;
                 margin-right: 10mm; */
                 size: A4;
-                margin: 0; /* margin: 0;  去掉浏览器默认的页眉页脚 */
+                margin: 0;
+                /* margin: 0;  去掉浏览器默认的页眉页脚 */
             }
+
             body {
-                font-size: 12px;  /* 从10.5px改为11.5px */
+                font-size: 12px;
+                /* 从10.5px改为11.5px */
                 line-height: 1.6;
                 margin: 0;
                 padding: 0;
                 width: 100%;
             }
-        
+
             .container {
                 max-width: 100%;
-                padding: 10mm 10mm;  /* 上下20mm，左右15mm */
+                padding: 10mm 10mm;
+                /* 上下20mm，左右15mm */
                 margin: 0;
-            } 
+            }
+
             .section {
                 page-break-inside: avoid;
-                padding-top: 10mm;         /* 每个可能在新页开始的元素都加上顶部内边距 */
-                margin-top: -10mm;         /* 用负margin抵消，避免正常流中的额外间距 */
+                padding-top: 10mm;
+                /* 每个可能在新页开始的元素都加上顶部内边距 */
+                margin-top: -10mm;
+                /* 用负margin抵消，避免正常流中的额外间距 */
             }
+
             .project-item {
                 page-break-inside: avoid;
-            } 
+            }
+
             .project-link {
                 font-size: 10px;
             }
-    
+
             .project-link a {
                 color: #333;
                 border-bottom: 1px solid #333;
             }
-            
+
             /* 在链接后显示完整URL（可选） */
             /* .project-link a[href]:after {
                 content: " (" attr(href) ")";
                 font-size: 9px;
                 color: #666;
             } */
-            
+
             /* 如果不想在打印时显示完整URL，使用下面的样式 */
-            
+
             .project-link a[href]:after {
                 content: none;
             }
-           
+
         }
 
 
@@ -70,18 +81,20 @@
             font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
             font-size: 13px;
             line-height: 1.7;
-            letter-spacing: 0.3px;  /* 增加轻微的字间距，提高可读性 */
+            letter-spacing: 0.3px;
+            /* 增加轻微的字间距，提高可读性 */
             color: #333;
             background: #fff;
         }
 
         .container {
-            max-width: 210mm; /* A4 宽度 */
+            max-width: 210mm;
+            /* A4 宽度 */
             margin: 0 auto;
             padding: 15px 20px;
         }
 
-        
+
         /* 头部信息 */
         .header {
             display: flex;
@@ -91,6 +104,7 @@
             padding-bottom: 12px;
             margin-bottom: 15px;
         }
+
         .header .info a {
             color: #333;
             text-decoration: none;
@@ -333,6 +347,7 @@
             margin: 6px 0 3px 0;
             color: #555;
         }
+
         /* 项目链接样式 */
         .project-link {
             margin-top: 8px;
@@ -351,11 +366,12 @@
         }
 
         /* 多个链接之间的分隔 */
-        .project-link a + a:before {
+        .project-link a+a:before {
             content: " | ";
             color: #666;
             margin: 0 5px;
         }
+
         /* 教育经历 */
         .education-item {
             margin-bottom: 8px;
@@ -379,23 +395,24 @@
             .advantages-list {
                 grid-template-columns: 1fr;
             }
-            
+
             .compact-project {
                 grid-template-columns: 1fr;
             }
-            
+
             .header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-            
+
             .experience-header,
             .project-header,
             .education-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .course-info {
                 font-size: 11px;
                 color: #444;
@@ -409,7 +426,10 @@
         }
 
         /* 字体优化 */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-weight: 600;
         }
 
@@ -432,13 +452,14 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- 头部信息 -->
         <header class="header">
             <div class="avatar-container">
                 <!-- 如果没有头像图片，可以用首字母代替 -->
-                <img src="头像.png" alt="个人头像" class="avatar">            
+                <img src="头像.png" alt="个人头像" class="avatar">
             </div>
             <div class="header-info">
                 <h1>秦颖欣</h1>
@@ -450,7 +471,7 @@
                     <span class="info-item">🌐 <a href="https://kristenqin.github.io/" target="_blank">博客</a></span>
                 </div>
                 <div class="job-intention">
-                    <strong>求职意向：</strong>产品经理/需求分析/产品助理 | <strong>期望薪资：</strong>10-12K | <strong>期望城市：</strong>深圳
+                    <strong>求职意向：</strong>前端开发工程师/软件工程师 | <strong>期望薪资：</strong>不给你看问你哥🐶 | <strong>期望城市：</strong>东莞/深圳
                 </div>
             </div>
         </header>
@@ -530,7 +551,7 @@
         <!-- 实习经历 -->
         <section class="section">
             <h2 class="section-title">实习经历</h2>
-            
+
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
@@ -546,21 +567,21 @@
                         <p><span class="label">实现：</span>区划数据三级下钻、大表单前后端数据同步</p>
                         <p><span class="label">技术：</span>Vue.js 2.x、Element UI、ECharts</p>
                     </div>
-                    
+
                     <div class="project-box">
                         <h4>藏药资源库平台开发</h4>
                         <p><span class="label">负责：</span>药企动态管理、方剂信息展示模块</p>
                         <p><span class="label">实现：</span>跨模块数据联动、知识图谱渲染、藏文双语</p>
                         <p><span class="label">技术：</span>Vue.js 2.x、G6、ECharts</p>
                     </div>
-                    
+
                     <div class="project-box">
                         <h4>化妆品企业质量安全风险监管</h4>
                         <p><span class="label">负责：</span>协同任务、问卷填写、题库、模板维护</p>
                         <p><span class="label">实现：</span>旧代码重构、遗留问题修复</p>
                         <p><span class="label">技术：</span>jQuery、Layui、Diaowen</p>
                     </div>
-                    
+
                     <div class="project-box">
                         <h4>政务业务系统低代码平台迁移</h4>
                         <p><span class="label">负责：</span>基础组件配置</p>
@@ -568,8 +589,9 @@
                         <p><span class="label">技术：</span>amis、Cursor辅助</p>
                     </div>
                 </div>
-            
-                <p style="margin-top: 6px;"><strong>实习成果：</strong>独立使用Vue完成模块开发 | Git版本控制、前后端联调 | 新功能页面10+、Bug修复50+、绩效80+</p>
+
+                <p style="margin-top: 6px;"><strong>实习成果：</strong>独立使用Vue完成模块开发 | Git版本控制、前后端联调 |
+                    新功能页面10+、Bug修复50+、绩效80+</p>
             </div>
 
             <div class="experience-item">
@@ -597,7 +619,7 @@
         <!-- 项目经历 -->
         <section class="section">
             <h2 class="section-title">项目经历</h2>
-            
+
             <div class="project-item">
                 <div class="project-header">
                     <span class="project-title">仿豆瓣电影交流平台（MovieHub）</span>
@@ -608,7 +630,9 @@
                 <p><strong>项目流程：</strong>需求分析→产品设计→技术选型及实现→项目管理（三个月独立完成全流程）</p>
                 <p><strong>技术栈：</strong>Claude辅助、Xmind、Axure原型设计、Vue 3前端开发、SpringBoot3后端开发、Git管理</p>
                 <p><strong>核心产出：</strong>完成度90% | 输出需求/设计/技术文档 | 成绩评定85分</p>
-                <p class="project-link"><strong>项目链接：</strong><a href="https://gitee.com/bigdoublexing/movie-hub-inspired-by-douban.git" target="_blank">MovieHub</a></p>
+                <p class="project-link"><strong>项目链接：</strong><a
+                        href="https://gitee.com/bigdoublexing/movie-hub-inspired-by-douban.git"
+                        target="_blank">MovieHub</a></p>
             </div>
 
             <div class="project-item">
@@ -621,7 +645,9 @@
                 <p><strong>执行步骤：</strong>需求定义→GPT辅助概念设计（3小时）→小红书用户验证→社区协作设计3D模型→授权设计专业同学参考</p>
                 <p><strong>投入成本：</strong>材料成本忽略不计 | GPT+小红书+MakerWorld社区 | 碎片沟通时间累计10小时</p>
                 <p><strong>核心产出：</strong>3D模型文件 | 流程文档 | 博客浏览9万+、点赞收藏1千+ | 扩展方案3+个</p>
-                <p class="project-link"><strong>项目链接：</strong><a href="https://www.xiaohongshu.com/discovery/item/673787e7000000003c0151d8?source=webshare&xhsshare=pc_web&xsec_token=ABIgT9g11flch2cpfOus_RPYqx4c0r6uYtkgnr8iGZ_u4=&xsec_source=pc_share" target="_blank">TissueFall - Gravity-Fed Tissue Dispenser</a></p>
+                <p class="project-link"><strong>项目链接：</strong><a
+                        href="https://www.xiaohongshu.com/discovery/item/673787e7000000003c0151d8?source=webshare&xhsshare=pc_web&xsec_token=ABIgT9g11flch2cpfOus_RPYqx4c0r6uYtkgnr8iGZ_u4=&xsec_source=pc_share"
+                        target="_blank">TissueFall - Gravity-Fed Tissue Dispenser</a></p>
             </div>
 
             <div class="project-item">
@@ -630,10 +656,13 @@
                     <span class="project-type">课程项目 2024.03-2024.04</span>
                 </div>
                 <p><strong>需求背景：</strong>办公室文书工作人工撰写平均耗时1小时/份、容易产生倦怠情绪</p>
-                <p><strong>技术架构：</strong>Flask + Spark LLM API | 原生JavaScript + marked.js | Flask-Login认证 + Flask-CORS跨域</p>
+                <p><strong>技术架构：</strong>Flask + Spark LLM API | 原生JavaScript + marked.js | Flask-Login认证 + Flask-CORS跨域
+                </p>
                 <p><strong>关键实现：</strong>异步处理降低响应时间60% | SessionStorage缓存减少50%重复请求 | Markdown渲染所见即所得</p>
                 <p><strong>量化成果：</strong>文档生成效率提升100%（1小时→30分钟）| 支持5类文书模板</p>
-                <p class="project-link"><strong>项目链接：</strong><a href="https://gitee.com/bigdoublexing/ai-document-assistant.git" target="_blank">QuickDraft</a></p>
+                <p class="project-link"><strong>项目链接：</strong><a
+                        href="https://gitee.com/bigdoublexing/ai-document-assistant.git" target="_blank">QuickDraft</a>
+                </p>
             </div>
         </section>
 
